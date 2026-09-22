@@ -1,38 +1,48 @@
-.taskLabel {
-    font-weight: 800;
+input {
+    height: 1.5rem;
 }
 
-#statusTask {
-    font-weight: 800;
-    margin-left: 5px;
+#taskInput {
+    font-size: 1rem;
 }
 
-.taskCat {
-    font-weight: 800;
-    margin-left: 5px;
+#taskCategory {
+    font-size: 1rem;
 }
 
-.list {
-    font-weight: 100;
+#deadLineDate {
+    font-size: 1rem;
 }
 
-#nameSpan {
-    font-weight: 200;
+#taskStatus {
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-top: 3px;
 }
 
-#category-Span {
-    font-weight: 200;
+#addTaskBtn {
+    height: 1.5rem;
+
 }
 
-#span-Deadline {
-    font-weight: 200
+#task-List {
+    padding: 0;
 }
 
-#span-Status {
-    font-weight: 200;
+#task-List li {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 10px 14px;
+    max-width: 40%;
+    margin-bottom: 10px;
 }
 
-.taskDue {
-    margin-left: 5px;
-    font-weight: 800;
+#task-List li span {
+    display: block;
+}
+
+.nameSpan, .taskCat, .taskDue, #statusTask {
+    font-size: 1.5rem;
 }
