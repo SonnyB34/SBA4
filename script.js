@@ -4,10 +4,15 @@ let addBtn = document.getElementById('addTaskBtn');
 let tasksList = document.getElementById('task-List');
 let deadLineInput = document.getElementById('deadLineDate');
 let taskStatus = document.getElementById('taskStatus');
-let tasks = [];
-addBtn.addEventListener('click', function () {
-  
 
+let tasks = [];
+
+if (localStorage.getItem('tasks')) {
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+}
+renderList();
+
+addBtn.addEventListener('click', function () {
   let name = inputTask.value;
   let category = taskCategoryInput.value;
   let deadline = deadLineInput.value;
@@ -22,7 +27,8 @@ addBtn.addEventListener('click', function () {
 
   console.log(tasks);
   tasks.push(newTask);
-  alert('Tasks have been added!');
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  alert('Task has been added!');
   renderList();
   inputTask.value = '';
   taskCategoryInput.value = '';
