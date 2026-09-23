@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Management App</title>
     <link rel="stylesheet" href="styles.css" />
-    
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main>
       <h1>Manage Your Tasks!</h1>
-    <input type="text" id="taskInput" placeholder="Enter Task" />
-    <input type="text" id="taskCategory" placeholder="Category" />
-    <input type="date" id="deadLineDate" /><br />
-    <select id="taskStatus">
-      <option value="In progress">In progress</option>
-      <option value="Completed">Completed</option>
-    </select>
-    <button id="addTaskBtn">Add Task</button>
-    <h2>Tasks:</h2>
-    <ul id="task-List"></ul>
+      
+      <input type="text" id="taskInput" placeholder="Enter Task" />
+      <input type="text" id="taskCategory" placeholder="Category" />
+      <input type="date" id="deadLineDate" /><br />
+      <select id="taskStatus">
+        <option value="In progress">In progress</option>
+        
+      </select>
+      <button id="addTaskBtn">Add Task</button>
+
+      <label for="filterStatus">Filter by Status:</label>
+      <select id="filterStatus">
+        <option value="All">All</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+        <option value="Overdue">Overdue</option>
+      </select>
+
+      <h2>Tasks:</h2>
+      <ul id="task-List">
+      </ul>
     </main>
-    <script src="script.js"></script>
   </body>
 </html>

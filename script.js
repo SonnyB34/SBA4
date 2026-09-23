@@ -5,6 +5,8 @@ let tasksList = document.getElementById('task-List');
 let deadLineInput = document.getElementById('deadLineDate');
 let taskStatus = document.getElementById('taskStatus');
 
+let filterStatus = document.getElementById('filterStatus');
+
 let tasks = [];
 
 if (localStorage.getItem('tasks')) {
@@ -38,35 +40,48 @@ addBtn.addEventListener('click', function () {
 
 function renderList() {
   tasksList.innerHTML = '';
-  console.log(tasks);
+  
   tasks.forEach((task) => {
     let listItem = document.createElement('li');
 
     let spanName = document.createElement('span');
-    spanName.className = 'nameSpan';
+    spanName.className = ' nameSpan';
     spanName.textContent = `Name: ${task.name}`;
 
     let categorySpan = document.createElement('span');
-    categorySpan.className = 'taskCat';
+    categorySpan.className = ' taskCat';
     categorySpan.textContent = `Category: ${task.category}`;
 
     let deadLineSpan = document.createElement('span');
-    deadLineSpan.className = 'taskDue';
+    deadLineSpan.className = ' taskDue';
     deadLineSpan.textContent = `Due: ${task.deadline}`;
 
     if (task.status === 'Overdue') {
       deadLineSpan.classList.add('overdue');
     }
 
-    let statusTask = document.createElement('span');
-    statusTask.id = 'statusTask';
-    statusTask.textContent = `Status: ${task.status}`;
+    let statusTask = document.createElement('select');
+    statusTask.className = ' statusTask';
+   
+    let statuses = ['In Progress', 'Completed', 'Overdue'];
+    statusTask.innerHTML = statuses.map(statusOption => `<option value="${statusOption}" ${task.status === statusOption ? 'selected' : ''}>${statusOption}</option>`).join('');
+
+    let btn = document.createElement('button');
+    btn.className = ' list-btn';
+    btn.textContent = 'Delete';
+    
+    btn.addEventListener('click', () => {
+      listItem.remove();
+    })
 
     listItem.appendChild(spanName);
     listItem.appendChild(categorySpan);
     listItem.appendChild(deadLineSpan);
     listItem.appendChild(statusTask);
-
+    listItem.appendChild(btn);
     tasksList.appendChild(listItem);
   });
+  
+    
+  
 }

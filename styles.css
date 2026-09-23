@@ -1,27 +1,39 @@
+
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
 input {
     height: 1.5rem;
 }
 
-#taskInput {
-    font-size: 1rem;
+input#taskInput {
+    font-size: 1.2rem;
 }
 
-#taskCategory {
-    font-size: 1rem;
+input#taskCategory {
+    font-size: 1.2rem;
 }
 
 #deadLineDate {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-top: 3px;
 }
 
 #taskStatus {
     height: 1.5rem;
-    font-size: 1rem;
-    margin-top: 3px;
+    font-size: 1.2rem;
+    margin-top: 5px;
 }
 
 #addTaskBtn {
-    height: 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
 
 }
 
@@ -35,7 +47,7 @@ input {
     border: 1px solid gray;
     border-radius: 6px;
     padding: 10px 14px;
-    max-width: 40%;
+    max-width: 35rem;
     margin-bottom: 10px;
 }
 
@@ -43,6 +55,18 @@ input {
     display: block;
 }
 
-.nameSpan, .taskCat, .taskDue, #statusTask {
+.nameSpan, .taskCat, .taskDue {
     font-size: 1.5rem;
+}
+
+.statusTask {
+    font-size: 1.5rem;
+    width: 50%;
+}
+
+.list-btn {
+    margin-top: 3px;
+    width: 20%;
+    font-size: 1rem;
+    border-radius: 6px;
 }
