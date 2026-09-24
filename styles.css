@@ -73,14 +73,6 @@ label {
     font-size: 1.75rem;
 }
 
-.taskCat {
-    margin-right: 4rem;
-}
-
-.taskDue {
-    margin-right: 1.25rem
-}
-
 .statusTask {
     font-size: 1.5rem;
     max-width: 10rem;
@@ -100,3 +92,24 @@ ul {
     max-width: 90%;
 }
 
+@media (min-width: 368px) {
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 85%;
+}
+
+    #task-List li {
+    display: flex;
+    flex-direction: colum;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 10px 14px;
+    width: 100%;
+    margin-bottom: 10px;
+   align-items: center;
+}
+}
