@@ -1,13 +1,18 @@
 body {
-    background-color: #d4aea6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9cb4ac;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    text-align: center;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
+    text-align: center;
 }
 
 #taskInput {
@@ -15,33 +20,30 @@ h2 {
 }
 
 input#taskInput {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
  }
 
 input#taskCategory {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 #deadLineDate {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-top: 3px;
 }
 
 #taskStatus {
-    height: 1.5rem;
-    font-size: 1.2rem;
+    
+    font-size: 1.25rem;
     margin-top: 5px;
 }
 
 #addTaskBtn {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     border-radius: 6px;
 
 }
 
-#task-List {
-    padding: 0;
-}
 
 #task-List li {
     display: flex;
@@ -49,26 +51,52 @@ input#taskCategory {
     border: 1px solid gray;
     border-radius: 6px;
     padding: 10px 14px;
-    max-width: 35rem;
+    width: 100%;
     margin-bottom: 10px;
+   align-items: center;
 }
 
 #task-List li span {
     display: block;
 }
 
+label {
+    font-size: 1.25rem;
+}
+
+#filterStatus {
+    font-size: 1.25rem;
+}
+
+
 .nameSpan, .taskCat, .taskDue {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.taskCat {
+    margin-right: 4rem;
+}
+
+.taskDue {
+    margin-right: 1.25rem
 }
 
 .statusTask {
     font-size: 1.5rem;
-    width: 50%;
+    max-width: 10rem;
 }    
 
 .list-btn {
     margin-top: 3px;
-    width: 30%;
-    font-size: 1.2rem;
+    max-width: 10rem;
+    font-size: 1.25rem;
     border-radius: 6px;
 }
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
