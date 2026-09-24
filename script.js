@@ -40,8 +40,8 @@ addBtn.addEventListener('click', function () {
 
 function renderList() {
   tasksList.innerHTML = '';
-  
-  tasks.forEach((task) => {
+
+  tasks.forEach((task, index) => {
     let listItem = document.createElement('li');
 
     let spanName = document.createElement('span');
@@ -62,17 +62,18 @@ function renderList() {
 
     let statusTask = document.createElement('select');
     statusTask.className = ' statusTask';
-   
+
     let statuses = ['In Progress', 'Completed', 'Overdue'];
-    statusTask.innerHTML = statuses.map(statusOption => `<option value="${statusOption}" ${task.status === statusOption ? 'selected' : ''}>${statusOption}</option>`).join('');
+    statusTask.innerHTML = statuses
+      .map(
+        (statusOption) =>
+          `<option value="${statusOption}" ${task.status === statusOption ? 'selected' : ''}>${statusOption}</option>`,
+      )
+      .join('');
 
     let btn = document.createElement('button');
     btn.className = ' list-btn';
     btn.textContent = 'Delete';
-    
-    btn.addEventListener('click', () => {
-      listItem.remove();
-    })
 
     listItem.appendChild(spanName);
     listItem.appendChild(categorySpan);
@@ -80,8 +81,12 @@ function renderList() {
     listItem.appendChild(statusTask);
     listItem.appendChild(btn);
     tasksList.appendChild(listItem);
+
+    btn.addEventListener('click', () => {
+      listItem.remove();
+      tasks.splice(index, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      renderList();
+    });
   });
-  
-    
-  
 }
